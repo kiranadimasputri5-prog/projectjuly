@@ -39,7 +39,6 @@
         <p>"Nampaknya kita harus berpetualang untuk menyelamatkan Endang dari belenggu ini..."</p>
         <img src="map_riddle.png" alt="Peta" class="map-img">
         <button class="btn-start" onclick="startGame()">Mulai Petualangan ⚔️</button>
-      
     </div>
 
     <div class="container" id="game-section">
@@ -67,7 +66,6 @@
     <div class="container" id="ending-section">
         <h1 style="font-size: 24px;">HAPPY GRADUATION! 🎉</h1>
         <div class="slideshow-container">
-            <!-- Foto pertama langsung dikasih class active agar memancing gambar lain terbuka -->
             <img class="mySlides active" src="foto_1.png" alt="Memory 1">
             <img class="mySlides" src="foto_2.jpg" alt="Memory 2">
             <img class="mySlides" src="foto_3.jpg" alt="Memory 3">
@@ -125,14 +123,6 @@
         let cluesRevealed = 0;
         let slideIndex = 0;
         let slideshowTimer;
-
-        function skipToEnding() {
-            document.getElementById("opening-section").style.display = "none";
-            document.getElementById("game-section").style.display = "none";
-            document.getElementById("ending-section").style.display = "block";
-            document.getElementById("bg-music").play().catch(e => console.log("Audio menunggu interaksi"));
-            startSlideshow();
-        }
 
         function startGame() { 
             document.getElementById("opening-section").style.display = "none"; 
@@ -195,7 +185,6 @@
             let slides = document.getElementsByClassName("mySlides");
             if (slides.length === 0) return;
             
-            // Bersihkan timer lama jika ada agar tidak double running
             if(slideshowTimer) clearTimeout(slideshowTimer);
 
             for (let i = 0; i < slides.length; i++) { 
